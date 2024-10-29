@@ -112,15 +112,15 @@ nav ul li .dropdown li a:hover {
 
 /* Hero section styles Start here */
 
-.Hero-card {
+.hero-card {
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   color: black;
 }
-.Hero-card.h3 {
-  margin-bottom: 5px;
+.hero-card-title {
+  padding-bottom: 10px;
 }
 
 .hero-width {
@@ -161,31 +161,37 @@ nav ul li .dropdown li a:hover {
 }
 
 .google-rating {
-  background-color: gray;
+  background-color: #393430;
   border-radius: 5px;
   padding: 15px;
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   /* justify-content: center; */
   margin-bottom: 10px;
 }
-
-.google-rating img {
-  height: 24px;
-  margin-right: 10px;
+.google-text {
+  padding-left: 5px;
+}
+.rating {
+  padding-left: 5px;
+}
+.fa-google {
+  font-size: 30px;
+  padding-right: 10px;
 }
 
 .form-group {
-  display: flex;
+  /* display: flex; */
   /* justify-content: center; */
   margin-bottom: 20px;
 }
 
 .form-group input {
   padding: 10px;
-  border: none;
   border-radius: 5px;
   margin: 0 10px;
+  outline: none;
+  border: 1px solid #ccc;
 }
 
 .bg {
@@ -243,71 +249,77 @@ nav ul li .dropdown li a:hover {
   border-radius: 5px;
 }
 
-/* Cards */
+/* General container styles */
+/* .services {
+  width: 100%;
+  text-align: center;
+} */
+
+.cards-container {
+  overflow: hidden;
+  width: 100%;
+}
+
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Style for each card */
+/* .card {
+  width: 300px;
+  margin: 10px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.card img {
+  width: 50px; /* Set image size */
+  height: 50px;
+  margin-bottom: 15px; /* Space between image and title */
+}
+
+.card h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px; /* Space between title and description */
+}
+
+.card p {
+  font-size: 0.95em;
+  color: #555;
+  margin: 0; /* Adjust spacing as needed */
 }
 
 .card {
-  background-color: #fff;
-  border-radius: 10px;
+  min-width: 300px; /* Define card width */
+  margin: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: calc(33.333% - 20px);
-  max-width: 300px;
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.card-content {
   padding: 20px;
+  text-align: left;
 }
 
-.card-content h3 {
-  margin: 0;
-  font-size: 1.5em;
-  color: #333;
-}
-
-.card-content p {
-  color: #777;
-  font-size: 0.9em;
-  margin: 10px 0 20px;
-}
-
-.card-content a {
+/* Navigation button styling */
+/* .nav-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px;
   background-color: #007bff;
-  color: #fff;
+  color: #ffffff;
+  cursor: pointer;
   border-radius: 5px;
-  text-decoration: none;
-  font-size: 0.9em;
-}
+  margin: 0 5px;
+} */
 
-.card-content a:hover {
-  background-color: #0056b3;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .card {
-    width: calc(50% - 20px);
-  }
-}
-
-@media (max-width: 480px) {
-  .card {
-    width: 100%;
-  }
+.nav-button i {
+  font-size: 1.5em;
 }
 
 /* Experts Section */
@@ -347,6 +359,41 @@ nav ul li .dropdown li a:hover {
 }
 
 /* Deliver on Our Promises Section */
+
+/* for vedio */
+
+/* Modal */
+/* Style for modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  margin: auto;
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* for video end */
 
 .promises-card {
   display: flex;
@@ -495,6 +542,97 @@ nav ul li .dropdown li a:hover {
 /* Google Reviews Section */
 
 .google-reviews {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.google-reviews-title p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.google-reviews-title h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.swiper-container {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.swiper-wrapper {
+  display: flex; /* Ensure the slides are displayed in a row */
+  justify-content: center; /* Center the slides horizontally */
+  align-items: center; /* Center the slides vertically */
+  gap: 20px; /* Add some spacing between the slides */
+}
+
+/* Use flex properties to ensure all cards have the same height */
+.google-reviews-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1; /* Allow cards to grow equally */
+  height: 300px;
+  width: 500px; /* Fixed height to maintain uniformity */
+  box-sizing: border-box; /* Ensure padding and borders are included in height */
+}
+
+.google-reviews-card p {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  flex-grow: 1; /* Allow the paragraph to grow and fill space */
+}
+
+.google-rating-reviews {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.stars {
+  display: flex;
+}
+
+.stars i {
+  color: #ffd700;
+}
+
+.google-rating-reviews img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.google-rating-reviews span {
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Adjust Swiper navigation buttons */
+/* .swiper-button-next,
+.swiper-button-prev {
+  color: #333;
+  width: 30px;
+  height: 30px;
+} */
+
+/* .google-reviews {
   background-color: #f8f9fa;
   padding: 100px;
 }
@@ -532,10 +670,12 @@ nav ul li .dropdown li a:hover {
   padding: 20px;
   gap: 10px;
 }
-.google-rating .stars {
+.google-rating-reviews .stars {
   color: #ffa800;
   display: flex;
-}
+  width: 20px;
+  height: 20px;
+} */
 
 /* Top Removal list section */
 .top-removalists {
@@ -888,5 +1028,280 @@ nav ul li .dropdown li a:hover {
 
   .footer-bottom-links a {
     margin: 0 10px;
+  }
+}
+
+/* Hear from Our Happy Customers */
+
+.Customers {
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.header-Customers {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-Customers h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 20px 0;
+}
+
+.header-Customers p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tagline {
+  color: #f0a500;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.testimonial-card {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+}
+
+.testimonial-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.5),
+    transparent
+  );
+  color: white;
+  padding: 20px;
+}
+
+.testimonial-text {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.customer-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Say goodbye to the stress and chaos of moving */
+
+.oz-moving-hero {
+  background-color: #14161f;
+  min-height: 400px;
+  position: relative;
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.oz-moving-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.oz-moving-text-block {
+  max-width: 600px;
+  color: white;
+}
+
+.oz-moving-heading {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.oz-moving-description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ffffff99;
+}
+
+.oz-moving-quote-btn {
+  display: inline-block;
+  background-color: #ffd700;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.oz-moving-quote-btn:hover {
+  background-color: #ffc700;
+}
+
+.oz-moving-staff-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-height: 90%;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .oz-moving-heading {
+    font-size: 2rem;
+  }
+
+  .oz-moving-staff-img {
+    opacity: 0.3;
+    right: -20%;
+  }
+
+  .oz-moving-text-block {
+    max-width: 100%;
+  }
+}
+
+/* LATEST BLOGS */
+
+.ozw-blog {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.ozw-blog__tagline {
+  color: #f0a500;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.ozw-blog__title {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.ozw-blog__description {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.ozw-blog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.ozw-blog__card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background: white;
+}
+
+.ozw-blog__card:hover {
+  transform: translateY(-4px);
+}
+
+.ozw-blog__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.ozw-blog__content {
+  padding: 24px;
+}
+
+.ozw-blog__card-title {
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.ozw-blog__excerpt {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ozw-blog__link {
+  color: #f0a500;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.ozw-blog__link:hover {
+  color: #d89600;
+}
+
+.ozw-blog__cta {
+  text-align: center;
+}
+
+.ozw-blog__cta-button {
+  display: inline-block;
+  background-color: #ffd700;
+  color: #000;
+  padding: 12px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.ozw-blog__cta-button:hover {
+  background-color: #ffc700;
+}
+
+@media (max-width: 768px) {
+  .ozw-blog__title {
+    font-size: 2rem;
+  }
+
+  .ozw-blog__grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -10,45 +10,119 @@ dropdownMenus.forEach((menu) => {
 });
 
 // for services section cards
-
 document.addEventListener("DOMContentLoaded", () => {
   const cardsContainer = document.getElementById("cards");
   const cardData = [
     {
-      icon: "fas fa-box",
       title: "Packing Service",
-      description:
-        "We offer professional packing services to ensure your belongings are secure.",
-      link: "#",
+      description: "Professional packing services.",
+      image: "./assests/Interstate.svg",
     },
     {
-      icon: "fas fa-truck",
       title: "Transport Service",
-      description: "Reliable transportation for your moving needs.",
-      link: "#",
+      description: "Reliable transportation.",
+      image: "./assests/Office.svg",
     },
     {
-      icon: "fas fa-warehouse",
       title: "Storage Service",
-      description: "Safe and secure storage facilities for short or long term.",
-      link: "#",
+      description: "Safe and secure storage.",
+      image: "./assests/Packing.svg",
     },
-    // Add more card data as needed
+    {
+      title: "Unpacking Service",
+      description: "Efficient unpacking services.",
+      image: "./assests/Residential.svg",
+    },
+    {
+      title: "Loading Service",
+      description: "Careful loading assistance.",
+      image:
+        "./assests/assets_a8fb8e7c-fb80-491e-b6cb-f2df617ba648_Home-Relocation.svg",
+    },
+    {
+      title: "Cleaning Service",
+      description: "Post-move cleaning solutions.",
+      image: "./assests/Storage.svg",
+    },
   ];
 
+  // vedio on promise dection
+
+  function openModal() {
+    document.getElementById("videoModal").style.display = "block";
+    document.getElementById("videoFrame").src += "&autoplay=1"; // Start playing video
+  }
+
+  function closeModal() {
+    document.getElementById("videoModal").style.display = "none";
+    document.getElementById("videoFrame").src = document
+      .getElementById("videoFrame")
+      .src.replace("&autoplay=1", ""); // Stop video
+  }
+
+  // Populate the cards
   cardData.forEach((card) => {
     const cardElement = document.createElement("div");
-    cardElement.classList.add("cards");
+    cardElement.classList.add("card");
     cardElement.innerHTML = `
-      <i class="${card.icon}"></i>
-      <div class="card-content">
-        <h3>${card.title}</h3>
-        <p>${card.description}</p>
-        <a href="${card.link}">Learn More</a>
-      </div>
+      <img src="${card.image}" alt="${card.title}">
+      <h3>${card.title}</h3>
+      <p>${card.description}</p>
     `;
     cardsContainer.appendChild(cardElement);
   });
+
+  // Set initial scroll position
+  let currentIndex = 0;
+  const cardWidth = 300 + 20; // Card width + margin
+  const maxIndex = cardData.length - 1;
+
+  // Function to update slider position
+  const updateSlider = () => {
+    cardsContainer.style.transform = `translateX(-${
+      currentIndex * cardWidth
+    }px)`;
+  };
+
+  // Move to next card
+  const nextCard = () => {
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+    } else {
+      currentIndex = 0; // Loop back to the start
+    }
+    updateSlider();
+  };
+
+  // Move to previous card
+  const prevCard = () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = maxIndex; // Loop back to the end
+    }
+    updateSlider();
+  };
+
+  // Handle next and previous buttons
+  document.getElementById("nextButton").addEventListener("click", () => {
+    nextCard();
+    resetAutoplay(); // Reset autoplay when manually navigating
+  });
+
+  document.getElementById("prevButton").addEventListener("click", () => {
+    prevCard();
+    resetAutoplay(); // Reset autoplay when manually navigating
+  });
+
+  // Autoplay functionality
+  let autoplayInterval = setInterval(nextCard, 3000); // Slide every 3 seconds
+
+  // Function to reset autoplay
+  const resetAutoplay = () => {
+    clearInterval(autoplayInterval); // Clear existing interval
+    autoplayInterval = setInterval(nextCard, 1000); // Restart autoplay
+  };
 });
 
 // we deliver on our promises
@@ -147,3 +221,24 @@ document.querySelectorAll(".faq-item").forEach((item) => {
     item.classList.toggle("active");
   });
 });
+
+// Happy customers section start here
+
+let currentIndex = 0;
+
+function showSlide(index) {
+  const slides = document.querySelector(".google-reviews-cards");
+  const totalSlides = slides.children.length;
+
+  if (index >= totalSlides) currentIndex = 0;
+  if (index < 0) currentIndex = totalSlides - 1;
+
+  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function plusSlides(n) {
+  showSlide((currentIndex += n));
+}
+
+// Initialize the first slide
+showSlide(currentIndex);
