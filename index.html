@@ -215,14 +215,30 @@
       </div>
     </section>
 
-    <!-- Video Section start here -->
+    
+<!-- Video Section start here -->
 
-    <section class="container">
+ 
+<div class="container video video-container">
+  <div class="video-thumbnail">
+  <img src="./assests/banner.png" alt="Video Thumbnail" class="thumbnail-image">
+  <div class="play-button-overlay" id="playButton">
+    <span>&#9658;</span>
+  </div>
+</div>
 
-      <div>
-        <iframe width="100%" height="500" src="https://www.youtube.com/embed/FWyiYzgPNi4?si=JiU--EdIyVu0pmFi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </section>
+<!-- The Modal for playing the video -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="closeButton">&times;</span>
+    <iframe id="videoFrame" width="400%" height="400" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+</div>
+
+
+
 
 
     <!-- Get Start with 4 Easy Steps start here -->
@@ -367,6 +383,7 @@
         <p>Google Reviews</p>
         <h1>Genuine Reviews From Happy Customers!</h1>
     </div>
+    
     <div class="swiper-container ">
         <div class="swiper-wrapper ">
             <!-- Slide 1 -->
@@ -521,7 +538,7 @@
 
     <div class="testimonials-grid">
       <div class="testimonial-card">
-        <img src="/api/placeholder/400/500" alt="Customer Testimonial" class="testimonial-image">
+        <img src="./assests/banner.png" alt="Customer Testimonial" class="testimonial-image">
         <div class="testimonial-content">
           <p class="testimonial-text">I recently used Ozwide Movers for my home relocation and couldn't be happier with the service. From the initial quote to the final delivery, th...</p>
           <div class="customer-name">Phoebe</div>
@@ -529,7 +546,7 @@
       </div>
 
       <div class="testimonial-card">
-        <img src="/api/placeholder/400/500" alt="Customer Testimonial" class="testimonial-image">
+        <img src="./assests/download (1).jpg" alt="Customer Testimonial" class="testimonial-image">
         <div class="testimonial-content">
           <p class="testimonial-text">Angus and Ricardo from OzWide were wonderful. They were super friendly, careful and polite and did an excellent job with our move. Th...</p>
           <div class="customer-name">Kate Bidgood</div>
@@ -537,7 +554,7 @@
       </div>
 
       <div class="testimonial-card">
-        <img src="/api/placeholder/400/500" alt="Customer Testimonial" class="testimonial-image">
+        <img src="./assests/map.png" alt="Customer Testimonial" class="testimonial-image">
         <div class="testimonial-content">
           <p class="testimonial-text">Thanks so much to Glenn and Gu for their hard work, polite manners, and great charisma. I could not recommend Ozwide Movers...</p>
           <div class="customer-name">Samuel Porter</div>
@@ -545,7 +562,7 @@
       </div>
 
       <div class="testimonial-card">
-        <img src="/api/placeholder/400/500" alt="Customer Testimonial" class="testimonial-image">
+        <img src="./assests/image2.png" alt="Customer Testimonial" class="testimonial-image">
         <div class="testimonial-content">
           <p class="testimonial-text">They turned up on time, were fast, efficient and careful with all the furniture. Everything was meticulously wrapped and strappe...</p>
           <div class="customer-name">Hannah Doughney</div>
@@ -590,7 +607,7 @@
     
     <div class="ozw-blog__grid">
       <article class="ozw-blog__card">
-        <img src="/api/placeholder/400/300" alt="Last-Minute Removals" class="ozw-blog__image">
+        <img src="./assests/banner.png" alt="Last-Minute Removals" class="ozw-blog__image">
         <div class="ozw-blog__content">
           <h3 class="ozw-blog__card-title">Last-Minute Removals in Brisbane: How to Keep It Hassle-Free</h3>
           <p class="ozw-blog__excerpt">Removing items last minute while in Brisbane may lead to a sense of being rushed in organizing...</p>
@@ -599,7 +616,7 @@
       </article>
 
       <article class="ozw-blog__card">
-        <img src="/api/placeholder/400/300" alt="Moving Yourself vs Hiring Removalists" class="ozw-blog__image">
+        <img src="./assests/image2.png" alt="Moving Yourself vs Hiring Removalists" class="ozw-blog__image">
         <div class="ozw-blog__content">
           <h3 class="ozw-blog__card-title">Moving Yourself vs Hiring Brisbane Removalists</h3>
           <p class="ozw-blog__excerpt">When you are planning to move to Brisbane you should give a lot of thought to the way you are going...</p>
@@ -608,7 +625,7 @@
       </article>
 
       <article class="ozw-blog__card">
-        <img src="/api/placeholder/400/300" alt="Why Hire Local Removalists" class="ozw-blog__image">
+        <img src="./assests/Storage.svg" alt="Why Hire Local Removalists" class="ozw-blog__image">
         <div class="ozw-blog__content">
           <h3 class="ozw-blog__card-title">Why Hire Local Brisbane Removalists for Your Next Move</h3>
           <p class="ozw-blog__excerpt">Whether you're moving your home or business, hiring local Brisbane movers might make all the difference...</p>

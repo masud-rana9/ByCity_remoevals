@@ -46,20 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  // vedio on promise dection
-
-  function openModal() {
-    document.getElementById("videoModal").style.display = "block";
-    document.getElementById("videoFrame").src += "&autoplay=1"; // Start playing video
-  }
-
-  function closeModal() {
-    document.getElementById("videoModal").style.display = "none";
-    document.getElementById("videoFrame").src = document
-      .getElementById("videoFrame")
-      .src.replace("&autoplay=1", ""); // Stop video
-  }
-
   // Populate the cards
   cardData.forEach((card) => {
     const cardElement = document.createElement("div");
@@ -224,21 +210,28 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 
 // Happy customers section start here
 
-let currentIndex = 0;
+// olny for video
 
-function showSlide(index) {
-  const slides = document.querySelector(".google-reviews-cards");
-  const totalSlides = slides.children.length;
+document.addEventListener("DOMContentLoaded", () => {
+  const playButton = document.getElementById("playButton");
+  const videoModal = document.getElementById("videoModal");
+  const closeButton = document.getElementById("closeButton");
+  const videoFrame = document.getElementById("videoFrame");
 
-  if (index >= totalSlides) currentIndex = 0;
-  if (index < 0) currentIndex = totalSlides - 1;
+  playButton.addEventListener("click", () => {
+    videoFrame.src = "https://www.youtube.com/embed/FWyiYzgPNi4?autoplay=1";
+    videoModal.style.display = "block";
+  });
 
-  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
+  closeButton.addEventListener("click", () => {
+    videoModal.style.display = "none";
+    videoFrame.src = ""; // Stop the video
+  });
 
-function plusSlides(n) {
-  showSlide((currentIndex += n));
-}
-
-// Initialize the first slide
-showSlide(currentIndex);
+  window.addEventListener("click", (event) => {
+    if (event.target === videoModal) {
+      videoModal.style.display = "none";
+      videoFrame.src = ""; // Stop the video
+    }
+  });
+});

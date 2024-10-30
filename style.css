@@ -36,6 +36,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2000;
   padding: 15px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -564,13 +565,12 @@ nav ul li .dropdown li a:hover {
 }
 
 .swiper-wrapper {
-  display: flex; /* Ensure the slides are displayed in a row */
-  justify-content: center; /* Center the slides horizontally */
-  align-items: center; /* Center the slides vertically */
-  gap: 20px; /* Add some spacing between the slides */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-/* Use flex properties to ensure all cards have the same height */
 .google-reviews-card {
   background-color: #fff;
   padding: 20px;
@@ -582,10 +582,10 @@ nav ul li .dropdown li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-grow: 1; /* Allow cards to grow equally */
+  flex-grow: 1;
   height: 300px;
-  width: 500px; /* Fixed height to maintain uniformity */
-  box-sizing: border-box; /* Ensure padding and borders are included in height */
+  width: 500px;
+  box-sizing: border-box;
 }
 
 .google-reviews-card p {
@@ -593,7 +593,7 @@ nav ul li .dropdown li a:hover {
   color: #666;
   line-height: 1.6;
   margin-bottom: 15px;
-  flex-grow: 1; /* Allow the paragraph to grow and fill space */
+  flex-grow: 1;
 }
 
 .google-rating-reviews {
@@ -1304,4 +1304,88 @@ nav ul li .dropdown li a:hover {
   .ozw-blog__grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* olny for video */
+
+.video {
+  width: 90%;
+  height: 80vh;
+  margin: auto;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 90%;
+  height: 60vh;
+  overflow: hidden;
+  margin: auto;
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #ffd700;
+}
+
+.play-button-overlay:hover {
+  background-color: rgba(255, 215, 0, 0.9);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 85px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  width: 80vw;
+  height: 80vh;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}
+
+#videoFrame {
+  width: 100%;
+  height: 80%;
 }
